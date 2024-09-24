@@ -1,23 +1,21 @@
 package com.factorydesignpattern.demo.controller;
 
+import com.factorydesignpattern.demo.dto.PaymentRequestDto;
 import com.factorydesignpattern.demo.service.PaymentService;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestParam;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 @RestController
 @RequestMapping("/payment")
 public class PaymentController {
 
-
+@Autowired
     private PaymentService paymentService;
 
     @PostMapping("/process")
 
-    public String processPayment(@RequestParam String gatewayType, @RequestParam double amount) {
+    public String processPayment(@RequestBody PaymentRequestDto paymentRequest) {
         System.out.println("Processing payment...");
-        return paymentService.processTransaction(gatewayType, amount);
+        return paymentService.processTransaction(paymentRequest.getGateway(), paymentRequest.getAmount());
     }
 }
