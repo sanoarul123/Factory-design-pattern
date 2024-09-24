@@ -1,3 +1,4 @@
+
 package com.factorydesignpattern.demo.service;
 
 public class PaymentGatewayFactory {
@@ -12,5 +13,7 @@ public class PaymentGatewayFactory {
             default:
                 throw new IllegalArgumentException("Invalid payment gateway: " + gatewayType);
         }
+
     }
+
     }

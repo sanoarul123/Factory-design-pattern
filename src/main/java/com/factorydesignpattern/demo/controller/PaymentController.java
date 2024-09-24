@@ -6,14 +6,13 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
 @RestController
-@RequestMapping("/payment")
+@RequestMapping("/api/payment")
 public class PaymentController {
 
-@Autowired
+    @Autowired
     private PaymentService paymentService;
 
     @PostMapping("/process")
-
     public String processPayment(@RequestBody PaymentRequestDto paymentRequest) {
         System.out.println("Processing payment...");
         return paymentService.processTransaction(paymentRequest.getGateway(), paymentRequest.getAmount());

@@ -2,10 +2,12 @@ package com.factorydesignpattern.demo.service;
 
 import com.factorydesignpattern.demo.entity.Transaction;
 import com.factorydesignpattern.demo.repository.TransactionRepository;
-import org.springframework.stereotype.Component;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
 
-@Component
+@Service
 public class PaymentService {
+    @Autowired
     private TransactionRepository transactionRepository;
 
     public String processTransaction(String gatewayType, double amount) {

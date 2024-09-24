@@ -1,22 +1,23 @@
 package com.factorydesignpattern.demo.dto;
 
-import lombok.Getter;
-import lombok.Setter;
-
-@Setter
-@Getter
 public class PaymentRequestDto {
     private String gateway;
     private double amount;
 
-
-
-    public PaymentRequestDto() {
+    // Getters and setters
+    public String getGateway() {
+        return gateway;
     }
 
-    public PaymentRequestDto(String gateway, double amount) {
+    public void setGateway(String gateway) {
         this.gateway = gateway;
+    }
+
+    public double getAmount() {
+        return amount;
+    }
+
+    public void setAmount(double amount) {
         this.amount = amount;
     }
-
 }
