@@ -8,7 +8,7 @@ public class Transaction {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
-    private String gatewayType;
+    private String gatewayType; 
     private double amount;
     private String status;
 
