@@ -10,6 +10,8 @@ public class PaymentGatewayFactory {
                 return new StripeGateway();
             case "SSLCOMMERZ":
                 return new SSLCommerzGateway();
+            case "BKASH":
+                return new BkashGateway();
             default:
                 throw new IllegalArgumentException("Invalid payment gateway: " + gatewayType);
         }
